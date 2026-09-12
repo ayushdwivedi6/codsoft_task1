@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #dcefff, #b8dcff);
+}
+
+.calculator {
+    width: min(100%, 390px);
+    padding: 22px;
+    background: #168ee5;
+    border-radius: 28px;
+    box-shadow: 0 22px 45px rgba(0, 70, 130, 0.25);
+}
+
+.display {
+    min-height: 125px;
+    margin-bottom: 20px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 6px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #eaf5ff;
+    color: #101010;
+}
+
+#previous-display {
+    min-height: 20px;
+    max-width: 100%;
+    color: #5c6b75;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#current-display {
+    max-width: 100%;
+    font-size: clamp(38px, 10vw, 54px);
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+button {
+    min-height: 70px;
+    border: none;
+    border-radius: 12px;
+    background: #1674c9;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.12s ease, filter 0.12s ease;
+}
+
+button:hover {
+    filter: brightness(1.12);
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 2px;
+}
+
+.operator {
+    background: #075fae;
+    font-weight: 700;
+}
+
+.clear {
+    background: #0b66b5;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.delete {
+    background: #0b66b5;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.equals {
+    background: #ff7547;
+    font-weight: 700;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+@media (max-width: 430px) {
+    body {
+        padding: 14px;
+    }
+
+    .calculator {
+        padding: 16px;
+        border-radius: 22px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    button {
+        min-height: 62px;
+        font-size: 25px;
+    }
+
+    .display {
+        min-height: 110px;
+    }
+}
